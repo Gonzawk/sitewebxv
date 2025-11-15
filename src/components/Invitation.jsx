@@ -97,9 +97,9 @@ export default function Invitation() {
     Una vez confirmes, te pasaré todos los detalles.
   </p>
 
-  <p className="precio">
+ {/*  <p className="precio">
     VALOR DE LA TARJETA: <strong>$35.000</strong>
-  </p>
+  </p> */}
 
   <p className="edad">
     Fiesta exclusiva para mayores <strong>(sin menores de edad)</strong>.
