@@ -1,5 +1,5 @@
-import "./components/styles/Invitation.css";
-import Invitation from "./components/Invitation";
+import "./components/styles/invitation.css";
+import Invitation from "./components/Invitation.jsx";
 
 function App() {
   return <Invitation />;
