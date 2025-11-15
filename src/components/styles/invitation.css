@@ -1,0 +1,385 @@
+/* === CONTENEDOR GENERAL === */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+}
+
+/* === LIENZO PRINCIPAL === */
+.invitation-canvas {
+  width: 100%;
+  max-width: 430px;     /* tamaño estándar de celular */
+  margin: 0 auto;
+  padding: 20px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === ESTILO BASE PARA CADA ELEMENTO === */
+.block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;     /* esto nos permite mover elementos dentro */
+}
+
+.block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================= */
+/* PERSONALIZACIÓN POR ELEMENTO */
+/* ============================= */
+
+/* --- DISCO IZQUIERDO ARRIBA --- */
+.block.disco-top-left {
+  justify-content: flex-start;
+  padding-right: 170px;
+  margin-top: -60px;
+}
+.block.disco-top-left img {
+  max-width: 50%;
+  z-index: 3;
+}
+
+/* --- PORTADA CENTRAL (foto+15+texto) --- */
+.block.portada {
+    margin-top: -140px;       /* EJEMPLO: lo acercás a la parte superior */
+    padding-right: 0px;
+}
+.block.portada img {
+  max-width: 100%;
+  z-index: 5;
+}
+
+/* --- DISCO DERECHA ARRIBA --- */
+.block.disco-top-right {
+  justify-content: flex-end;
+  padding-left: 65px;
+  margin-top: -100px;
+}
+.block.disco-top-right img {
+  max-width: 30%;
+  z-index: 2;
+}
+
+/* --- CALENDARIO --- */
+.block.calendario img {
+  max-width: 100%;
+  margin-top: -60px;
+  z-index: 5;
+}
+
+/* --- LUGAR Y HORA --- */
+.block.lugar-hora img {
+  max-width: 100%;
+  margin-top: 25px;
+  z-index: 5;
+}
+
+/* --- BOTÓN UBICACIÓN --- */
+.block.btn-ubicacion img {
+  max-width: 90%;
+  margin-top: 15px;
+  z-index: 6;
+}
+
+/* --- FOTOS COLLAGE --- */
+.block.collage img {
+  max-width: 110%;
+  margin-top: -200px;
+  z-index: 4;
+}
+
+
+
+/* --- SOBRE CARTA --- */
+.block.sobre img {
+  max-width: 100%;
+  margin-top: -40px;
+  z-index: 5;
+}
+
+/* --- CONFIRMAR ASISTENCIA --- */
+.block.btn-confirmar img {
+  max-width: 90%;
+  margin-top: -10px;
+  z-index: 6;
+}
+
+/* --- DRESS CODE --- */
+.block.dresscode img {
+  max-width: 100%;
+  margin-top: -100px;
+}
+
+/* --- REGALO ALIAS --- */
+.block.regalo-alias img {
+  max-width: 100%;
+  margin-top: -170px;
+}
+
+/* --- PIE: DISCO + COPA --- */
+.block.disco-bottom-left {
+  justify-content: flex-start;
+  padding-right: 60px;
+  margin-top: -130px;
+}
+.block.disco-bottom-left img {
+  max-width: 30%;
+}
+
+.block.copa-final img {
+  max-width: 100%;
+  margin-top: -75px;
+  padding-right: 30px;
+}
+
+.block.disco-bottom-right {
+  justify-content: flex-end;
+  padding-left: 175px;
+  margin-top: -250px;
+}
+.block.disco-bottom-right img {
+  max-width: 45%;
+}
+
+/* === UBICACIÓN EXACTA DEL REPRODUCTOR === */
+.music-player {
+  margin-top: -80px;     /* lo movés hacia abajo */
+  margin-bottom: 20px;  /* separa del siguiente elemento */
+  display: flex;
+  justify-content: center;
+}
+
+/* === UBICACIÓN EXACTA DEL COUNTDOWN === */
+/* .countdown-block {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+} */
+
+
+
+
+
+
+/* === COUNTDOWN === */
+
+.countdown {
+  width: 100%;
+  max-width: 330px;
+  background: #f8a9d1;
+  padding: 24px;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: -40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.countdown-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.countdown-number {
+  font-size: 42px;
+  line-height: 42px;
+  color: white;
+  font-weight: bold;
+}
+
+.countdown-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: white;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.countdown-sep {
+  font-size: 34px;
+  color: white;
+  font-weight: 500;
+}
+
+
+/* === TURNTABLE GENERAL === */
+.turntable {
+  width: 55%;
+  max-width: 280px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 60px; /* espacio para controles */
+}
+
+/* Asegura que todas las imágenes escalen bien */
+.turntable img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === DISCO ATRÁS === */
+.vinyl {
+  position: absolute;
+  top: 40%;
+  right: -22%;        /* qué tanto sobresale */
+  width: 100%;        /* tamaño vinilo */
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.vinyl.spin {
+  animation: spinRecord linear infinite;
+  animation-duration: 4s;
+}
+
+@keyframes spinRecord {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* === PORTADA (recuadro blanco) === */
+.cover-wrapper {
+  position: relative;
+  width: 70%;       /* tamaño general de la portada */
+  z-index: 3;
+}
+
+.cover-bg {
+  background: white;
+  padding: 10px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.cover-img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* === CONTROLES === */
+.tt-controls {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.tt-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.primary { background: #f38bb0; }
+.secondary { background: #444; }
+
+/* === PROGRESS BAR === */
+.tt-bar {
+  height: 6px;
+  width: 110px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tt-fill {
+  height: 100%;
+  background: #f38bb0;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.btn-ubicacion,
+.btn-confirmar {
+  cursor: pointer;
+}
+
+.btn-ubicacion img,
+.btn-confirmar img {
+  transition: transform 0.15s ease;
+}
+
+.btn-ubicacion:hover img,
+.btn-confirmar:hover img {
+  transform: scale(1.04);
+}
+
+.invitation-canvas {
+  overflow: hidden;   /* Corta todo lo que sobresale */
+}
+
+.copa-final {
+  margin-bottom: -135px;  /* Ajustá este valor */
+}
+
+
+/* === TEXTO FINAL === */
+.texto-final {
+  width: 80%;
+  margin: 0px auto 30px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.45;
+  display: block;      /* fuerza modo vertical */
+}
+
+.texto-final p {
+  margin-bottom: -10px;
+}
+
+.texto-final .precio {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.texto-final .edad {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.bola-extra-1 {
+  width: 50%;
+  margin-top: 0px;
+  justify-content: flex-end;
+  padding-left: 380px;   /* mueve horizontal */
+}
+
+/* Bola centro */
+.bola-extra-2 {
+    width: 70%;
+  margin-top: -290px;
+  justify-content: flex-start;
+  padding-right: 350px;
+}
+
+.turntable {
+  padding-bottom: 60px !important;
+}
+
+.music-player {
+  z-index: 20 !important;
+  position: relative;
+}
